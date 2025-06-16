@@ -1,91 +1,77 @@
+```markdown
 # Smart Safety Gear Detection System 🦺👷‍♂️
 
-An AI-powered safety compliance monitoring system that uses computer vision to detect proper safety gear usage in industrial environments. Built with Python, StreamLit, and machine learning technologies.
-
-## 🎯 Features
-
-- Real-time detection of safety gear including helmets, safety vests, and protective equipment
-- User-friendly web interface built with StreamLit
-- Support for both image and video processing
-- Detailed analytics and compliance reporting
-- Configurable detection parameters
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-v1.27.0-orange.svg)](https://streamlit.io/)
+[![Ultralytics YOLO](https://img.shields.io/badge/Ultralytics%20YOLO-v8-green.svg)](https://github.com/ultralytics/ultralytics)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
 
-## 🛠️ Technologies Used
+This AI-powered system monitors safety compliance in industrial settings by detecting the presence (or absence) of crucial safety gear using computer vision.  Built with Python, Streamlit, and the powerful Ultralytics YOLO model, it offers a user-friendly interface for real-time analysis and comprehensive reporting.
 
-- **Frontend**: StreamLit
-- **Backend**: Python
-- **Machine Learning Framework**: TensorFlow/PyTorch
-- **Image Processing**: OpenCV
-- **Data Analysis**: NumPy, Pandas
-- **Visualization**: Matplotlib, Seaborn
-- **Model Training**: YOLO architecture
 
-## 📊 Project Structure
+## 🚀 Features
 
-```
-├── SSGDS/
-│   ├── runs/
-│   │   └── detect/
-│   │       └── train/
-│   ├── stored_media/
-│   │   ├── processed_videos/
-│   │   └── uploaded_videos/
-│   ├── app.py
-│   └── Smart_Safety_Gear_Detection_System.py
+- **Real-time Safety Gear Detection:** Identifies helmets, safety vests, and other protective equipment in images and videos.
+- **Streamlit Web Interface:** Provides an intuitive and user-friendly web application for easy interaction.
+- **Image & Video Processing:** Supports both image uploads and video streaming for versatile analysis.
+- **Detailed Analytics & Reporting:** Generates comprehensive compliance reports, including confusion matrices, precision-recall curves, and F1-score curves (see `runs/detect/train/` directory).
+- **Historical Data Storage:** Stores processed data for trend analysis and improved performance over time (Implementation inferred from `st.session_state`).
+- **Notification System:**  Provides alerts and notifications within the Streamlit application (Implementation inferred from `st.session_state`).
+
+
+## ⚙️ Installation
+
+This project requires Python 3.8+ and several libraries.  Install them using pip:
+
+```bash
+pip install -r requirements.txt
 ```
 
-## 🚀 Installation Guide
+**Note:** You'll need to create a `requirements.txt` file listing all project dependencies.  A good starting point would include:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Smart-Safety-Gear-Detection-System.git
-   ```
+```
+streamlit
+ultralytics
+opencv-python
+Pillow
+```
 
-2. Create and activate virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # For Linux/Mac
-   venv\Scripts\activate  # For Windows
-   ```
+You may also need to install additional dependencies based on the full `app.py` code and the specific YOLO model used.
 
-3. Install required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-4. Download the pre-trained weights (if applicable):
-   ```bash
-   python download_weights.py
-   ```
+## 🏃 Usage
 
-5. Run the application:
-   ```bash
-   streamlit run app.py
-   ```
+1.  **Run the Streamlit app:** `streamlit run app.py`
+2.  Access the web interface at `http://localhost:8501`
+3.  **Upload an image or video:** Use the interface to upload your media file.
+4.  **View the results:** The system will process the media and display the detection results, along with relevant metrics and visualizations.
+5.  **Review historical data:** Access previous analyses and reports from the application's interface (Functionality inferred from session state).
 
-## 📋 Usage
 
-1. Access the web interface at `http://localhost:8501`
-2. Upload an image or video file containing safety gear scenarios
-3. Adjust detection parameters if needed
-4. View real-time detection results and analytics
-5. Export reports and statistics as needed
+## 📁 Project Structure
 
-## 📈 Performance Metrics
+```
+Smart-Safety-Gear-Detection-System/
+├── app.py                # Main Streamlit application
+├── SSGDS/                # Backend folder (presumably for model loading/management)
+│   └── start.py          # Likely contains model initialization
+├── runs/                 # Results from model training and inference
+│   └── detect/train/    # Contains images, curves and metrics from the model training.
+├── stored_media/         # Processed media files (Images and videos)
+├── READ.md               # Additional Documentation
+└── README.md             # This file
+```
 
-- Model Accuracy: 95%+
-- Real-time processing capability: 30 FPS
-- Support for multiple safety gear categories
-- Low false positive rate
 
-## 🤝 Contributing
+## 🛠️ Technology Stack
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- **Python:** Programming language
+- **Streamlit:** Web framework for building interactive web apps
+- **Ultralytics YOLO:** State-of-the-art object detection model
+- **OpenCV:** Computer vision library
+- **Pillow:** Image processing library
 
 ## ⚠️ Project Status and Rights
 
